@@ -15,7 +15,7 @@ type ChartItem = {
 export default function PortfolioChart({ data }: { data: ChartItem[] }) {
   return (
     <ResponsiveContainer width="100%" height={280}>
-      <RadarChart data={data} cx="50%" cy="50%" outerRadius="72%">
+      <RadarChart data={data} cx="50%" cy="52%" outerRadius="58%" margin={{ top: 16, right: 28, bottom: 16, left: 28 }}>
         <PolarGrid stroke="#d5deea" />
         <PolarAngleAxis dataKey="dimension" tick={{ fill: '#40516b', fontSize: 11 }} />
         <PolarRadiusAxis domain={[0, 4]} tick={false} axisLine={false} />

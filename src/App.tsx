@@ -399,8 +399,17 @@ function Approach() {
 function PortfolioExplorer() {
   const [selectedId, setSelectedId] = useState(portfolioItems[0].id)
   const selected = portfolioItems.find((item) => item.id === selectedId) ?? portfolioItems[0]
+  const chartLabels: Record<keyof PortfolioProfile, string> = {
+    missionAlignment: 'Mission',
+    enterpriseReuse: 'Reuse',
+    organizationalReadiness: 'Org ready',
+    dataReadiness: 'Data ready',
+    deliveryFeasibility: 'Delivery',
+    governanceSensitivity: 'Governance',
+    measurableValue: 'Value',
+  }
   const chartData = (Object.keys(profileLabels) as (keyof PortfolioProfile)[]).map((key) => ({
-    dimension: profileLabels[key].replace(' ', '\n'),
+    dimension: chartLabels[key],
     value: levelMap[selected.profile[key]],
   }))
 
